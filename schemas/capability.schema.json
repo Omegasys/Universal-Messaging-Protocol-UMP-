@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UMP Capability",
+  "type": "object",
+
+  "required": [
+    "version",
+    "features"
+  ],
+
+  "properties": {
+
+    "version": {
+      "type": "string"
+    },
+
+    "features": {
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string",
+
+        "enum": [
+
+          "TEXT",
+          "MEDIA",
+          "GROUPS",
+          "REACTIONS",
+          "READ_RECEIPTS",
+
+          "ENCRYPTION",
+          "FOUR_RATCHET",
+
+          "LARGE_FILES",
+          "RESUME_TRANSFER",
+
+          "SMS",
+          "MMS",
+          "RCS",
+
+          "WIFI",
+          "BLUETOOTH",
+          "MESH",
+          "LORA",
+          "SATELLITE"
+        ]
+      }
+    },
+
+    "max_file_size": {
+      "type": "integer"
+    },
+
+    "transports": {
+      "type": "array",
+
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
