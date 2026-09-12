@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UMP Transport",
+  "type": "object",
+
+  "required": [
+    "name",
+    "type",
+    "status"
+  ],
+
+  "properties": {
+
+    "name": {
+      "type": "string"
+    },
+
+    "type": {
+      "type": "string",
+
+      "enum": [
+        "SMS",
+        "MMS",
+        "RCS",
+        "TCP",
+        "UDP",
+        "WIFI",
+        "BLUETOOTH",
+        "MESH",
+        "LORA",
+        "TOR",
+        "I2P",
+        "SATELLITE"
+      ]
+    },
+
+    "status": {
+      "type": "string",
+
+      "enum": [
+        "AVAILABLE",
+        "UNAVAILABLE",
+        "CONNECTING"
+      ]
+    },
+
+    "security": {
+      "type": "object"
+    },
+
+    "bandwidth": {
+      "type": "integer"
+    },
+
+    "latency": {
+      "type": "integer"
+    }
+  }
+}
