@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UMP Message",
+  "type": "object",
+
+  "required": [
+    "version",
+    "id",
+    "type",
+    "timestamp",
+    "sender",
+    "payload"
+  ],
+
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+
+    "id": {
+      "type": "string"
+    },
+
+    "type": {
+      "type": "string",
+      "enum": [
+        "TEXT",
+        "MEDIA",
+        "FILE",
+        "GROUP",
+        "CONTROL",
+        "EMERGENCY"
+      ]
+    },
+
+    "timestamp": {
+      "type": "string"
+    },
+
+    "sender": {
+      "type": "string"
+    },
+
+    "recipient": {
+      "type": "string"
+    },
+
+    "payload": {
+      "type": "object"
+    },
+
+    "metadata": {
+      "type": "object"
+    },
+
+    "security": {
+      "type": "object",
+      "properties": {
+        "encrypted": {
+          "type": "boolean"
+        },
+        "ratchet": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
