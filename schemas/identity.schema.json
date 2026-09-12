@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UMP Identity",
+  "type": "object",
+
+  "required": [
+    "identity_id",
+    "public_key",
+    "devices"
+  ],
+
+  "properties": {
+
+    "identity_id": {
+      "type": "string"
+    },
+
+    "public_key": {
+      "type": "string"
+    },
+
+    "username": {
+      "type": "string"
+    },
+
+    "phone_number": {
+      "type": "string"
+    },
+
+    "devices": {
+      "type": "array",
+
+      "items": {
+        "type": "object",
+
+        "properties": {
+
+          "device_id": {
+            "type": "string"
+          },
+
+          "device_key": {
+            "type": "string"
+          },
+
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "REVOKED"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
