@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UMP Attachment",
+  "type": "object",
+
+  "required": [
+    "attachment_id",
+    "name",
+    "size",
+    "hash"
+  ],
+
+  "properties": {
+
+    "attachment_id": {
+      "type": "string"
+    },
+
+    "name": {
+      "type": "string"
+    },
+
+    "type": {
+      "type": "string"
+    },
+
+    "size": {
+      "type": "integer",
+      "maximum": 10737418240
+    },
+
+    "hash": {
+      "type": "string"
+    },
+
+    "chunks": {
+      "type": "integer"
+    },
+
+    "encrypted": {
+      "type": "boolean"
+    }
+  }
+}
