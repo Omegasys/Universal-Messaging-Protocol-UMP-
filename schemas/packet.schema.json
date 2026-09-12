@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UMP Packet",
+  "type": "object",
+
+  "required": [
+    "packet_id",
+    "message_id",
+    "version",
+    "data"
+  ],
+
+  "properties": {
+
+    "packet_id": {
+      "type": "string"
+    },
+
+    "message_id": {
+      "type": "string"
+    },
+
+    "version": {
+      "type": "string"
+    },
+
+    "fragment": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      }
+    },
+
+    "transport": {
+      "type": "string"
+    },
+
+    "security": {
+      "type": "object"
+    },
+
+    "data": {
+      "type": "string"
+    },
+
+    "checksum": {
+      "type": "string"
+    }
+  }
+}
