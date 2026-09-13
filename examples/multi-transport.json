@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "id": "multi-transport-001",
+  "type": "TEXT",
+  "sender": "phone:+15550001001",
+  "recipient": "phone:+15550001002",
+  "timestamp": "2026-09-12T12:04:00Z",
+  "payload": {
+    "text": "UMP multi-transport message."
+  },
+  "metadata": {
+    "transport_policy": {
+      "preferred": [
+        "WIFI",
+        "TCP",
+        "RCS",
+        "SMS"
+      ],
+      "fallback": true
+    }
+  },
+  "security": {
+    "encrypted": true,
+    "ratchet": "transport"
+  },
+  "transports": [
+    {
+      "name": "WIFI",
+      "available": true,
+      "priority": 1
+    },
+    {
+      "name": "TCP",
+      "available": true,
+      "priority": 2
+    },
+    {
+      "name": "RCS",
+      "available": true,
+      "priority": 3
+    },
+    {
+      "name": "SMS",
+      "available": true,
+      "priority": 4
+    }
+  ]
+}
