@@ -1,0 +1,112 @@
+"""
+UMP Identity Manager
+
+Command-line identity management utility.
+"""
+
+import argparse
+import json
+
+
+identities = {}
+
+
+def create_identity(
+    identity_id: str,
+    public_key: str
+) -> dict:
+
+    if identity_id in identities:
+        raise ValueError(
+            "Identity already exists"
+        )
+
+    identity = {
+        "identity_id": identity_id,
+        "public_key": public_key,
+        "devices": [],
+        "active": True
+    }
+
+    identities[identity_id] = identity
+
+    return identity
+
+
+def get_identity(
+    identity_id: str
+) -> dict | None:
+
+    return identities.get(
+        identity_id
+    )
+
+
+def main():
+
+    parser = argparse.ArgumentParser(
+        description="UMP Identity Manager"
+    )
+
+    subparsers = parser.add_subparsers(
+        dest="command",
+        required=True
+    )
+
+    create = subparsers.add_parser(
+        "create"
+    )
+
+    create.add_argument(
+        "identity_id"
+    )
+
+    create.add_argument(
+        "public_key"
+    )
+
+    show = subparsers.add_parser(
+        "show"
+    )
+
+    show.add_argument(
+        "identity_id"
+    )
+
+    args = parser.parse_args()
+
+    if args.command == "create":
+
+        identity = create_identity(
+            args.identity_id,
+            args.public_key
+        )
+
+        print(
+            json.dumps(
+                identity,
+                indent=2
+            )
+        )
+
+    elif args.command == "show":
+
+        identity = get_identity(
+            args.identity_id
+        )
+
+        if identity is None:
+            parser.error(
+                "Identity not found"
+            )
+
+        print(
+            json.dumps(
+                identity,
+                indent=2
+            )
+        )
+
+
+if __name__ == "__main__":
+    main()
