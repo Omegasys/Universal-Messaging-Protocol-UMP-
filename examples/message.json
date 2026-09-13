@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "id": "example-message-001",
+  "type": "TEXT",
+  "sender": "phone:+15550001001",
+  "recipient": "phone:+15550001002",
+  "timestamp": "2026-09-12T12:00:00Z",
+  "payload": {
+    "text": "Hello from UMP!"
+  },
+  "metadata": {},
+  "security": {
+    "encrypted": false,
+    "ratchet": null
+  }
+}
