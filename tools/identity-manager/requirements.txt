@@ -1,0 +1,3 @@
+# UMP Identity Manager
+#
+# No external dependencies required.
