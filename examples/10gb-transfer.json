@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "id": "file-message-001",
+  "type": "FILE",
+  "sender": "phone:+15550001001",
+  "recipient": "phone:+15550001002",
+  "timestamp": "2026-09-12T12:03:00Z",
+  "payload": {
+    "attachment_id": "attachment-10gb-001",
+    "filename": "large-archive.bin",
+    "mime_type": "application/octet-stream",
+    "size": 10737418240,
+    "checksum": "SHA256_CHECKSUM",
+    "chunk_size": 1048576,
+    "total_chunks": 10240,
+    "transfer": {
+      "resumable": true,
+      "encrypted": true
+    }
+  },
+  "metadata": {},
+  "security": {
+    "encrypted": true,
+    "ratchet": "message"
+  }
+}
